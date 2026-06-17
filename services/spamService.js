@@ -22,7 +22,7 @@ const LUA_PATH = path.join(__dirname, '..', 'lua', 'spamService.lua');
 const LUA_SOURCE = fs.readFileSync(LUA_PATH, 'utf8');
 const SCOPE_CLIENT = 'client';
 const SCOPE_IP = 'ip';
-const NORMALIZE_WHITESPACE_RE = /[-\u001F\u007F\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]/g;
+const NORMALIZE_WHITESPACE_RE = /[\u001F\u007F\u00A0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]/g;
 
 function normalizeNumber(value, fallback) {
   return typeof value === 'number' && Number.isFinite(value) ? value : fallback;
