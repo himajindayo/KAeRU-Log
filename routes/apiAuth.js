@@ -15,7 +15,7 @@ function createApiAuthRouter({ redisClient }) {
   const router = express.Router();
   const tokenBucket = createTokenBucket(redisClient);
 
-  router.post('/api/auth', async (req, res) => {
+  router.post('/auth', async (req, res) => {
     try {
       const ip = typeof req.ip === 'string' && req.ip ? req.ip : '0.0.0.0';
       const rateKey = KEYS.tokenBucketAuthIp(shortSha256Hex(ip, 16));

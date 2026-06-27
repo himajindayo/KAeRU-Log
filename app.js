@@ -50,6 +50,7 @@ function mountApiRoutes(app, { redisClient, io, adminPass }) {
   });
 
   app.use(
+    '/api',
     createApiAuthRouter({
       redisClient,
     })
